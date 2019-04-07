@@ -8,11 +8,8 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
-    <string name="email">Email</string>
     <string name="todo">TODO</string>
     <string name="repat_password">Repat Password</string>
     <string name="repat_email">Repat Email</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
+
 </resources>
