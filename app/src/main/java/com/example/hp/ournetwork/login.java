@@ -75,9 +75,6 @@ public class login extends AppCompatActivity {
                                     if(ch=="1"){
                                     Intent actionIntent1 = new Intent(login.this,events.class);
                                     startActivity(actionIntent1);}
-                                    else if(ch=="2"){
-                                        Intent actionIntent2 = new Intent(login.this,menumain.class);
-                                        startActivity(actionIntent2);}
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(login.this, "Authentication failed.",
