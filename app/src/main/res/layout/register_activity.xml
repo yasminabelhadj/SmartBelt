@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="register"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp"
+    android:background="@drawable/blue">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+
+
+        <ImageButton
+            android:id="@+id/ssave"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="410dp"
+            android:background="@drawable/signinbutton"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="78dp"
+            android:layout_marginBottom="100dp"
+            android:src="@drawable/maintain"
+            android:contentDescription="@string/todo" />
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="194dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/uusername"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/username"
+                android:hint="@string/username"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:importantForAutofill="no" />
+
+
+            <EditText
+                android:id="@+id/eemail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/email1"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/eemail1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/email2"
+                android:hint="@string/repat_email"
+                android:inputType="textEmailAddress"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/mmdp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/pass1"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+
+                android:autofillHints=""
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/mmdp2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/pass2"
+                android:hint="@string/repat_password"
+                android:inputType="textPassword"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:autofillHints="" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

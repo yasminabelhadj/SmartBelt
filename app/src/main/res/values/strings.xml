@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BACK POSTURE</string>
+    <string name="title_activity_registration">Registration</string>
+    <string name="events">events</string>
+    <string name="project">projects</string>
+    <string name="formation">training session</string>
+    <string name="forgot_your_password">Forgot your Password ?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="todo">TODO</string>
+    <string name="repat_password">Repat Password</string>
+    <string name="repat_email">Repat Email</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+</resources>

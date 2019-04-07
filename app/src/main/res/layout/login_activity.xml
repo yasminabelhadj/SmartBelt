@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2"
+    >
+
+
+    <EditText
+        android:id="@+id/hemail"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="208dp"
+        android:layout_weight="1"
+        android:background="@drawable/email1"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:autofillHints="" />
+
+    <EditText
+    android:id="@+id/ppassword"
+    android:layout_width="300dp"
+    android:layout_height="40dp"
+    android:layout_marginStart="40dp"
+    android:background="@drawable/pass1"
+    android:ems="10"
+    android:hint="    Password"
+    android:inputType="textPassword"
+    android:textColor="#ffffff"
+    android:textColorHint="#ffffff"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hemail"
+    tools:ignore="MissingConstraints"
+    android:layout_marginLeft="40dp"
+        android:autofillHints="" />
+
+
+    <ImageButton
+
+        android:id="@+id/signin"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/signinbutton1"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="340dp"
+        android:contentDescription="TODO" />
+
+
+    <ImageButton
+        android:id="@+id/backtofutur"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/signupbutton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signin"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/Forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/forgot_your_password"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.833"
+        tools:ignore="MissingConstraints" />
+</android.support.constraint.ConstraintLayout>
