@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Eentre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent actionIntent = new Intent(MainActivity.this,splash.class);
+                Intent actionIntent =new Intent(MainActivity.this,splash.class);
                 startActivity(actionIntent);
             }
         });

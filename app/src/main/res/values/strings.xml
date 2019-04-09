@@ -7,6 +7,10 @@
     <string name="username">Username</string>
     <string name="repat_password">Repat Password</string>
     <string name="repat_email">Repat Email</string>
+    <string name="perfect_posture">Perfect Posture</string>
+    <string name="left_shoulder">left shoulder</string>
     <string name="todo">TODO</string>
+    <string name="right_shoulder">Right shoulder</string>
+    <string name="back_view">Back View</string>
 
 </resources>
