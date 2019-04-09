@@ -23,12 +23,11 @@
         app:layout_constraintTop_toTopOf="parent" >
 
 
-
         <ImageButton
             android:id="@+id/ssave"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginStart="55dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="410dp"
             android:background="@drawable/signinbutton"
             android:contentDescription="@string/todo" />
@@ -41,7 +40,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="78dp"
             android:layout_marginBottom="100dp"
-            android:src="@drawable/maintain"
+            android:src="@drawable/image__logo"
             android:contentDescription="@string/todo" />
 
         <LinearLayout

@@ -14,8 +14,9 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="112dp"
         android:layout_weight="1"
+        android:autofillHints=""
         android:background="@drawable/email1"
         android:ems="10"
         android:hint="@string/email"
@@ -24,25 +25,29 @@
         android:textColorHint="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        android:autofillHints="" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
-    android:id="@+id/ppassword"
-    android:layout_width="300dp"
-    android:layout_height="40dp"
-    android:layout_marginStart="40dp"
-    android:background="@drawable/pass1"
-    android:ems="10"
-    android:hint="    Password"
-    android:inputType="textPassword"
-    android:textColor="#ffffff"
-    android:textColorHint="#ffffff"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/hemail"
-    tools:ignore="MissingConstraints"
-    android:layout_marginLeft="40dp"
-        android:autofillHints="" />
+        android:id="@+id/ppassword"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:autofillHints=""
+        android:background="@drawable/pass1"
+        android:ems="10"
+        android:hint="    Password"
+        android:inputType="textPassword"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hemail"
+        app:layout_constraintVertical_bias="0.083"
+        tools:ignore="MissingConstraints" />
 
 
     <ImageButton
@@ -51,11 +56,14 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="48dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/signinbutton1"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="340dp"
-        android:contentDescription="TODO" />
+        tools:layout_editor_absoluteY="239dp" />
 
 
     <ImageButton
@@ -63,24 +71,27 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/signupbutton2"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signin"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="TODO" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/Forgot"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="64dp"
         android:text="@string/forgot_your_password"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.833"
         tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

@@ -3,7 +3,7 @@ package com.example.hp.ournetwork;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class events extends AppCompatActivity {
+public class FrontView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

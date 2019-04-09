@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -73,7 +72,7 @@ public class login extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
 
                                     if(ch=="1"){
-                                    Intent actionIntent1 = new Intent(login.this,events.class);
+                                    Intent actionIntent1 = new Intent(login.this,FrontView.class);
                                     startActivity(actionIntent1);}
                                 } else {
                                     // If sign in fails, display a message to the user.
