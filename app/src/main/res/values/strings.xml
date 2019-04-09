@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BACK POSTURE</string>
+    <string name="app_name">Perfect Posture</string>
     <string name="title_activity_registration">Registration</string>
     <string name="forgot_your_password">Forgot your Password ?</string>
     <string name="email">Email</string>
@@ -12,5 +12,11 @@
     <string name="todo">TODO</string>
     <string name="right_shoulder">Right shoulder</string>
     <string name="back_view">Back View</string>
+    <string-array name="axes">
+        <item>X axe</item>
+        <item>Y axe</item>
+        <item>Z axe</item>
+
+    </string-array>
 
 </resources>

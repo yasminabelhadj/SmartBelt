@@ -21,6 +21,14 @@
             "package_name": "com.example.hp.ournetwork",
             "certificate_hash": "dfce518c3783d5da3a8942c8192bbe2d0218c73c"
           }
+        },
+        {
+          "client_id": "705129595611-9q2aj9p5mc2sk6opc9fdfikjtqrev6dd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp.ournetwork",
+            "certificate_hash": "37937d16f00a99908788cf7baa6f43471aef708f"
+          }
         }
       ],
       "api_key": [
