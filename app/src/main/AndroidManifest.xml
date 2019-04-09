@@ -27,6 +27,7 @@
             android:label="@string/title_activity_registration"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FrontView" />
+        <activity android:name=".BackView"></activity>
     </application>
 
 </manifest>
