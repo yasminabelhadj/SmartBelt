@@ -1,52 +1,32 @@
 {
   "project_info": {
-    "project_number": "634424293596",
-    "firebase_url": "https://ournetwork-267f8.firebaseio.com",
-    "project_id": "ournetwork-267f8",
-    "storage_bucket": "ournetwork-267f8.appspot.com"
+    "project_number": "705129595611",
+    "firebase_url": "https://piste-170c5.firebaseio.com",
+    "project_id": "piste-170c5",
+    "storage_bucket": "piste-170c5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:634424293596:android:fd0d615232839807",
+        "mobilesdk_app_id": "1:705129595611:android:fd0d615232839807",
         "android_client_info": {
           "package_name": "com.example.hp.ournetwork"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "634424293596-9e13ktrh7qijqdj7466kti0f7lh1u6up.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.hp.ournetwork",
-            "certificate_hash": "05cb58e56ef3ff670a534e2bf0d83c795aac2b76"
-          }
-        },
-        {
-          "client_id": "634424293596-pd8id9usm6v82o9mrfbfu11hajbmemqd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBovXLxgqL0YdZZWwhK5lAwxSJpgNLViq8"
+          "current_key": "AIzaSyBWzYu3zptw7MvOF0y9H0ISBLh3sq3ido8"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "634424293596-pd8id9usm6v82o9mrfbfu11hajbmemqd.apps.googleusercontent.com",
+              "client_id": "705129595611-3afc6c28qvt0g7jk9mhquei2fbg5gtb6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }
