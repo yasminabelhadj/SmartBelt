@@ -19,11 +19,26 @@ public class FrontView extends AppCompatActivity {
         right = (Button) findViewById(R.id.right);
         back = (Button) findViewById(R.id.back);
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent actionIntent =new Intent(FrontView.this,BackView.class);
+                startActivity(actionIntent);
+            }
+        });
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent actionIntent2 =new Intent(FrontView.this,RealTime.class);
+                startActivity(actionIntent2);
+            }
+        });
+
         //onClick();
 
     }
 
-    public void onClick(View v) {
+    /*public void onClick(View v) {
         switch (v.getId()) {
             case R.id.left:
                 Intent ileft = new Intent(FrontView.this, BackView.class);
@@ -45,5 +60,5 @@ public class FrontView extends AppCompatActivity {
                 break;
         }
 
-    }
+    }*/
 }
