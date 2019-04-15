@@ -16,6 +16,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Date;
+import java.util.Random;
 
 public class login extends AppCompatActivity {
 
@@ -70,6 +75,22 @@ public class login extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    Random rn = new Random();
+                                    long date = new Date().getTime();
+                                    AccelData adat =new AccelData(
+                                            date,
+                                            0.15 + rn.nextInt(9 - 0 + 1)*0.172 ,
+                                            0.15 + rn.nextInt(9 - 0 + 1)*0.172
+                                            ,0.15 + rn.nextInt(9 - 0 + 1)*0.172 );
+
+                                    //test.add(adat);
+                                    //test.add("Steve");
+                                    //test.add("Anna");
+
+                                    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                                    //myRef = new Firebase("https://piste-170c5.firebaseio.com/");
+                                    //for(String friend : friends) {
+                                    rootRef.child("testData").child("data_1").setValue(adat);
 
 
                                     Intent actionIntent1 = new Intent(login.this,FrontView.class);

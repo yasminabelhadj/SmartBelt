@@ -1,6 +1,7 @@
 package com.example.hp.ournetwork;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,6 +15,11 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
@@ -23,6 +29,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSelectedListener, SensorEventListener,
@@ -34,17 +41,32 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
     private int j= 0;
     private boolean started=false;
     private SensorManager sensorManager;
-    private Button btnStart, btnStop;
+    private Button btnStart, btnStop,reg;
     private ArrayList<AccelData> sensorData;
     SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
     int record ;
+
+
+    private  Firebase myRef;
+    private  DatabaseReference myRef1;
+
+    FirebaseDatabase database;
+    private FirebaseAuth mAuth;
+
 
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if(!FirebaseApp.getApps(this).isEmpty()) {
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        }
         super.onCreate(savedInstanceState);
+        database = FirebaseDatabase.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+
         setContentView(R.layout.activity_real_time);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // we get graph view instance
@@ -53,6 +75,32 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+
+        reg = (Button) findViewById(R.id.reg);
+
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //List<AccelData> test = new ArrayList<>();
+                Random rn = new Random();
+                long date = new Date().getTime();
+                AccelData adat =new AccelData(
+                        date,
+                        0.15 + rn.nextInt(9 - 0 + 1)*0.172 ,
+                        0.15 + rn.nextInt(9 - 0 + 1)*0.172
+                        ,0.15 + rn.nextInt(9 - 0 + 1)*0.172 );
+
+                //test.add(adat);
+                //test.add("Steve");
+                //test.add("Anna");
+
+                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                //myRef = new Firebase("https://piste-170c5.firebaseio.com/");
+                //for(String friend : friends) {
+                rootRef.child("testData").child("data_1").setValue(adat);
+            }
+        });
 
 
 

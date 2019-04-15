@@ -1,6 +1,7 @@
 package com.example.hp.ournetwork;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -95,6 +96,8 @@ public class register extends AppCompatActivity {
 
                                     Toast.makeText(register.this, "Welcome To OUR_Network",
                                             Toast.LENGTH_SHORT).show();
+                                    Intent actionIntent1 = new Intent(register.this,FrontView.class);
+                                    startActivity(actionIntent1);
 
 
                                 }else if(!task.isSuccessful()){
