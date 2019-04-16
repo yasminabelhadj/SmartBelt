@@ -60,9 +60,6 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        if(!FirebaseApp.getApps(this).isEmpty()) {
-            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-        }
         super.onCreate(savedInstanceState);
         database = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -75,34 +72,6 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-
-
-        reg = (Button) findViewById(R.id.reg);
-
-        reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //List<AccelData> test = new ArrayList<>();
-                Random rn = new Random();
-                long date = new Date().getTime();
-                AccelData adat =new AccelData(
-                        date,
-                        0.15 + rn.nextInt(9 - 0 + 1)*0.172 ,
-                        0.15 + rn.nextInt(9 - 0 + 1)*0.172
-                        ,0.15 + rn.nextInt(9 - 0 + 1)*0.172 );
-
-                //test.add(adat);
-                //test.add("Steve");
-                //test.add("Anna");
-
-                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-                //myRef = new Firebase("https://piste-170c5.firebaseio.com/");
-                //for(String friend : friends) {
-                rootRef.child("testData").child("data_1").setValue(adat);
-            }
-        });
-
-
 
 
 
@@ -161,7 +130,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
         super.onResume();
 
         // we're going to simulate real time with thread that append data to the graph
-       /* new Thread(new Runnable() {
+        new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -169,14 +138,23 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
                 // we add 100 new entries
                 for (int i = 0; i < 100; i++) {
 
+
                     runOnUiThread(new Runnable() {
 
                         @Override
                         public void run() {
                             if (started) {
-                                //addEntry();
+
+                                Random rn = new Random();
+                                final long date = new Date().getTime();
+                                double val= new Double(0.15 + rn.nextInt(9 - 0 + 1) * 0.172);
+                                DataPoint pointx = new DataPoint(date,val);
+
+
+                                // here, we choose to display max 10 points on the viewport and we scroll to end
+                                series.appendData(pointx, true, 30);
                             }
-                            //series.appendData(new DataPoint(Date().getTime(), event.values[0] ), true, 10);
+
                         }
                     });
 
@@ -189,7 +167,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
                 }
 
             }
-        }).start(); */
+        }).start();
 
     }
 
@@ -197,13 +175,10 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
     @Override
     public void onSensorChanged(final SensorEvent  event) {
         if (started) {
-            double x = event.values[0];
-            double y = event.values[1];
-            double z = event.values[2];
-            final long date = new Date().getTime();
+           
 
-
-            series.appendData(new DataPoint(date,event.values[record] ), true, 1000);
+            //series.appendData(new DataPoint(date,event.values[record] ), true, 1000);
+            //addEntry();
 
             // yourMethod();
 
@@ -278,12 +253,5 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
 
 
     // add random data to graph
-    /*private void addEntry() {
-        if(sensorData.size()>0) {
 
-            // here, we choose to display max 10 points on the viewport and we scroll to end
-            series.appendData(new DataPoint(sensorData.get(j).getDate(),sensorData.get(j).getX() ), true, 10);
-            j++;
-        }
-    } */
 }
