@@ -152,7 +152,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
 
 
                                 // here, we choose to display max 10 points on the viewport and we scroll to end
-                                series.appendData(pointx, true, 30);
+                                series.appendData(pointx, true, 1000);
                             }
 
                         }
@@ -160,7 +160,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
 
                     // sleep to slow down the add of entries
                     try {
-                        Thread.sleep(600);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         // manage error ...
                     }
@@ -175,7 +175,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
     @Override
     public void onSensorChanged(final SensorEvent  event) {
         if (started) {
-           
+
 
             //series.appendData(new DataPoint(date,event.values[record] ), true, 1000);
             //addEntry();

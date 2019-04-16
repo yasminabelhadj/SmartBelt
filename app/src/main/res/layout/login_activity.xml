@@ -12,9 +12,11 @@
     <EditText
         android:id="@+id/hemail"
         android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="108dp"
+        android:layout_height="39dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:autofillHints=""
         android:background="@drawable/email1"
@@ -23,9 +25,10 @@
         android:inputType="textEmailAddress"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/ppassword"
@@ -37,7 +40,7 @@
         android:autofillHints=""
         android:background="@drawable/pass1"
         android:ems="10"
-        android:hint="    Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff"
@@ -47,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hemail"
         app:layout_constraintVertical_bias="0.082"
-        tools:ignore="MissingConstraints" />
+       />
 
 
     <ImageButton
@@ -59,7 +62,7 @@
         android:layout_marginTop="268dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/signinbutton1"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +77,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/signupbutton2"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

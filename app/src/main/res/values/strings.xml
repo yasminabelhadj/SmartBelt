@@ -3,19 +3,21 @@
     <string name="title_activity_registration">Registration</string>
     <string name="forgot_your_password">Forgot your Password ?</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
+
     <string name="username">Username</string>
-    <string name="repat_password">Repat Password</string>
-    <string name="repat_email">Repat Email</string>
+    <string name="repat_password">Repeat Password</string>
+    <string name="repat_email">Repeat Email</string>
     <string name="perfect_posture">Perfect Posture</string>
     <string name="left_shoulder">left shoulder</string>
-    <string name="todo">TODO</string>
+
     <string name="right_shoulder">Right shoulder</string>
     <string name="back_view">Back View</string>
+    <string name="password">Password</string>
+    <string name="todo">TODO</string>
     <string-array name="axes">
-        <item>X axe</item>
-        <item>Y axe</item>
-        <item>Z axe</item>
+        <item>Right Shoulder</item>
+        <item>Left Shoulder</item>
+        <item></item>
 
     </string-array>
 
