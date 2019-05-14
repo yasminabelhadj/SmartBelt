@@ -79,7 +79,7 @@ public class FrontView extends AppCompatActivity {
                 AccelData test=GenerateData();
 
                 rootRef.child("users").child(userID).child("left Shoulder").setValue(test);
-                toastMessage("New Information has been saved.");
+                toastMessage("Press start to display sensor Data");
                 //rootRef.child("testData").child("Left Shoulder").setValue(test);
 
 

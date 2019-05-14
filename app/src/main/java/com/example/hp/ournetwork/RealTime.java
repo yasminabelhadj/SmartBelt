@@ -1,11 +1,17 @@
 package com.example.hp.ournetwork;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -45,6 +51,9 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
     private ArrayList<AccelData> sensorData;
     SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
     int record ;
+    private int comp=0;
+    private double seuil = 2.40;
+    private int dur=10;
 
 
     private  Firebase myRef;
@@ -52,7 +61,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
 
     FirebaseDatabase database;
     private FirebaseAuth mAuth;
-
+    private MediaPlayer sound;
 
 
 
@@ -110,7 +119,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
                 }
             }
         });
-
+        sound = MediaPlayer.create(this,R.raw.purification);
 
     }
 
@@ -136,7 +145,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
             public void run() {
 
                 // we add 100 new entries
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0; i < 1000; i++) {
 
 
                     runOnUiThread(new Runnable() {
@@ -147,8 +156,40 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
 
                                 Random rn = new Random();
                                 final long date = new Date().getTime();
-                                double val= new Double(0.15 + rn.nextInt(9 - 0 + 1) * 0.172);
+                                double val= new Double(0.8 + rn.nextInt(5 - 0 + 1) * 2.172);
                                 DataPoint pointx = new DataPoint(date,val);
+
+                                if (comp>dur){
+                                    //try {
+                                     //   Thread.sleep(3000);
+                                    //} catch (InterruptedException e) {
+                                        // manage error ...
+                                    //}
+
+                                    comp=0;
+                                    AlertDialog.Builder a_builder = new AlertDialog.Builder(RealTime.this);
+                                    a_builder.setMessage("Bad Posture Detected! Please try and adjust your posture.")
+
+                                            .setCancelable(false)
+                                            .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    //finish();
+                                                }
+                                            });
+
+                                    AlertDialog alert = a_builder.create();
+                                    alert.setTitle("Smart Belt Notification Service");
+
+
+                                    alert.show();
+                                    sound.start();
+
+
+                                }
+                                if (val>seuil){
+                                    comp++;
+                                }
 
 
                                 // here, we choose to display max 10 points on the viewport and we scroll to end
@@ -160,7 +201,7 @@ public class RealTime extends AppCompatActivity  implements AdapterView.OnItemSe
 
                     // sleep to slow down the add of entries
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(400);
                     } catch (InterruptedException e) {
                         // manage error ...
                     }
